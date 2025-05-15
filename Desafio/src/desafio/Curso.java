@@ -1,34 +1,26 @@
 package desafio;
 
-public class Curso {
-    private String titulo;
-    private String descricao;
-    private int cargaMoradia;
-    public String getTitulo() {
-        return titulo;
+public class Curso extends Conteudo {
+    private int cargaHoraria;
+    @Override
+    public double calcularXp() {
+        return XP_PADRAO * cargaHoraria;
     }
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
+    public int getcargaHoraria() {
+        return cargaHoraria;
     }
-    public String getDescricao() {
-        return descricao;
+    public void setcargaHoraria(int cargaHoraria) {
+        this.cargaHoraria = cargaHoraria;
     }
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
-    public int getCargaMoradia() {
-        return cargaMoradia;
-    }
-    public void setCargaMoradia(int cargaMoradia) {
-        this.cargaMoradia = cargaMoradia;
-    }
+
 
     @Override
     public String toString() {
         return "{" +
-                "titulo='" + titulo + '\'' +
-                ", descricao='" + descricao + '\'' +
-                ", cargaMoradia=" + cargaMoradia +
+                "titulo='" + getTitulo()+ '\'' +
+                ", descricao='" +getDescricao() + '\'' +
+                ", cargaHoraria=" + cargaHoraria +
                 '}';
     }
+
 }
